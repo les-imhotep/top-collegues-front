@@ -1,0 +1,27 @@
+
+<div class="container">
+<h1>Page de démonstration des composants de l'application</h1>
+
+
+<p>AvisComponent</p>
+    <app-bandeau-component></app-bandeau-component>
+
+ <!-- 
+<div class="row">
+    <app-collegue-component [collegue]="colFictif" (avis)="traiter($event)"></app-collegue-component>
+        <div class="col-md-1"></div>    
+    <app-collegue-component [collegue]="colFictif" (avis)="traiter($event)"></app-collegue-component>
+        <div class="col-md-1"></div>      
+    <app-collegue-component [collegue]="colFictif" (avis)="traiter($event)"></app-collegue-component>
+    <div class="col-md-1"></div>  
+</div> -->
+
+
+<hr>
+<h1>Composant Liste Collegues</h1>
+<app-liste-collegues-component [colleguesTab]="collegues"></app-liste-collegues-component>
+
+{{avisRecu}}
+
+</div>
+
