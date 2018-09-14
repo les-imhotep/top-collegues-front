@@ -25,17 +25,24 @@
 
         <div class="row">
 
+            <span class="border">
             <div class="col-sm-8">
-            <h3 class="font-weight-light">Liste des collègues</h3>
+            <h3 class="font-weight-light text-info">Liste des collègues</h3>
             <app-liste-collegues-component [colleguesTab]="collegues"></app-liste-collegues-component>
             </div>
+            </span>
 
                 {{avisRecu}}
-        
-            <div class="col-sm-4">
-            <h3 class="font-weight-light">Historique des votes</h3>
+
+            
+
+            <span class="border">
+            <div class="col bg-light text-dark">
+            <h3 class="font-weight-light text-info">Historique des votes</h3>
             <app-historique-votes></app-historique-votes>
             </div>
+        
+            </span>
 
         </div>
     

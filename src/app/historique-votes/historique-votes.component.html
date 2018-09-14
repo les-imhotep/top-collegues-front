@@ -10,11 +10,16 @@
       <div class="mt-2">
   
     <div class="colv" >
-      <div class="card" style="width: 18rem;">
+      <div class="card" style="width: 16rem;">
           <img class="card-img-left" src= {{colv.coll.photo}} alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">{{colv.coll.pseudo}}</h5>
-            <p class="card-text">{{colv.avis}}</p>
+            <p class="card-text">
+              
+                <ng-container *ngIf="colv.avis == 0" > Collègue adoré :)</ng-container>
+                <ng-container *ngIf ="colv.avis == 1" > Collègue détesté :(</ng-container>
+
+              </p>
           </div>
       </div>
     </div>
