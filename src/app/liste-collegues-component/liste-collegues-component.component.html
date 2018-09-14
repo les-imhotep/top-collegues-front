@@ -1,15 +1,15 @@
 <div class="container">
 
 
-<button>Rafraichir la liste</button>
+<button  type="button" class="btn btn-info">Rafraichir la liste</button>
 <section>
 
   <section *ngFor="let col of colleguesTab">
 
     <div class="mt-4">
+        <div class="col">
         <app-collegue-component [collegue]="col"></app-collegue-component>
-       
-
+        </div>
 
     </div>
 

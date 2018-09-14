@@ -1,10 +1,15 @@
 
 <div class="container">
-<h1>Page de démonstration des composants de l'application</h1>
 
 
-<p>AvisComponent</p>
-    <app-bandeau-component></app-bandeau-component>
+
+<h2 class="text-center">Page de démonstration des composants de l'application</h2>
+
+
+<hr>
+
+        <app-bandeau-component></app-bandeau-component>
+            
 
  <!-- 
 <div class="row">
@@ -16,12 +21,22 @@
     <div class="col-md-1"></div>  
 </div> -->
 
-
 <hr>
-<h1>Composant Liste Collegues</h1>
-<app-liste-collegues-component [colleguesTab]="collegues"></app-liste-collegues-component>
 
-{{avisRecu}}
+        <div class="row">
 
+            <div class="col-sm-8">
+            <h2>Composant Liste Collegues</h2>
+            <app-liste-collegues-component [colleguesTab]="collegues"></app-liste-collegues-component>
+            </div>
+
+                {{avisRecu}}
+        
+            <div class="col-sm-4">
+            <h2>Historique des votes</h2>
+            <app-historique-votes></app-historique-votes>
+            </div>
+
+        </div>
+    
 </div>
-
