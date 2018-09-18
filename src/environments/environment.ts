@@ -7,7 +7,7 @@ export const environment = {
 
 
   // ajout d'une URL backend en mode développement
-  backendUrl: 'http://localhost:8080'
+  backendUrl: 'http://localhost:8080/collegues'
 };
 
 

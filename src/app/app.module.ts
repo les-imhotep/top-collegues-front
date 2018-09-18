@@ -14,6 +14,7 @@ import { ListeColleguesComponentComponent } from './liste-collegues-component/li
 import { HistoriqueVotesComponent } from './historique-votes/historique-votes.component';
 import { HttpClientModule } from '@angular/common/http';
 
+
 @NgModule({
   declarations: [
     AppComponent,
