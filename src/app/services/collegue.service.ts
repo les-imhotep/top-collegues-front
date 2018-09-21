@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Collegue, Avis } from '../model';
 import { environment } from '../../environments/environment';
+import { Observable, Subject } from 'rxjs';
+import { map, filter } from 'rxjs/operators';
 
 // Environnement URL
 const URL_BACKEND_COLLEGUES = environment.backendUrl;
@@ -10,22 +12,30 @@ const URL_BACKEND_COLLEGUES = environment.backendUrl;
   providedIn: 'root'
 })
 export class CollegueService {
+  private _superBus = new Subject<string>();
+
+  get superBus(): Observable<string> {
+    return this._superBus.asObservable();
+  }
+
   constructor(private _http: HttpClient) {}
 
-  listerCollegues(): Promise<Collegue[]> {
+  listerCollegues(): Observable<Collegue[]> {
     // récupérer la liste des collègues côté serveur
     return this._http
       .get(URL_BACKEND_COLLEGUES)
-      .toPromise()
-      .then((data: any[]) =>
-        data.map(collegueServeur =>
-          Collegue.fromCollegueServeur(collegueServeur)
+      .pipe(
+        map((data: any[]) =>
+          data.map(collegueServeur =>
+            Collegue.fromCollegueServeur(collegueServeur)
+          )
         )
       );
   }
 
   donnerUnAvis(unCollegue: Collegue, avis: Avis): Promise<Collegue> {
-    // TODO Aimer ou Détester un collègue côté serveur
+    this._superBus.next(`Super : ${unCollegue.pseudo} - ${avis} `);
+
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'

@@ -15,6 +15,7 @@ import { HistoriqueVotesComponent } from './historique-votes/historique-votes.co
 import { HttpClientModule } from '@angular/common/http';
 import { AccueilComponent } from './accueil/accueil.component';
 import { FormsModule } from '@angular/forms';
+import { SuperPipe } from './super.pipe';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { FormsModule } from '@angular/forms';
     CollegueComponentComponent,
     ListeColleguesComponentComponent,
     HistoriqueVotesComponent,
-    AccueilComponent
+    AccueilComponent,
+    SuperPipe
   ],
   imports: [
     BrowserModule,
