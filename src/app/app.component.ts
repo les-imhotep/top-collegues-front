@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
 
+class Demo {
+  saisie: string;
+  commentaire: string;
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,7 +13,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'bonjour-angular';
 
-  masquerSection=true;
+  masquerSection = true;
 
+  demo = new Demo();
 
+  clic() {
+    console.log(this.demo);
+  }
 }

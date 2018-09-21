@@ -10,5 +10,21 @@
 <app-demo></app-demo>
 
 </div> -->
+<form #monForm="ngForm">
 
+  Saisie <input type="text" [(ngModel)]="demo.saisie" name="saisie" required #saisie="ngModel">
+  <div *ngIf="saisie.invalid">
+    le champ saisie est invalide
+  </div>
+  Commentaire <textarea [(ngModel)]="demo.commentaire" name="commentaire" required minlength=2></textarea>
+
+  {{demo | json}}
+
+  <button (click)="clic()">Valider</button>
+
+  <section *ngIf="monForm.valid">
+    Le formulaire est valide !
+  </section>
+
+</form>
 <app-accueil></app-accueil>

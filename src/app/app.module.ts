@@ -14,7 +14,7 @@ import { ListeColleguesComponentComponent } from './liste-collegues-component/li
 import { HistoriqueVotesComponent } from './historique-votes/historique-votes.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AccueilComponent } from './accueil/accueil.component';
-
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,10 +32,11 @@ import { AccueilComponent } from './accueil/accueil.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     MDBBootstrapModule.forRoot(),
     HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
